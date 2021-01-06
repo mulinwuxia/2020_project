@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>疫情数据爬取</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>新冠疫情数据分析</h1>
+        <p>
+            爬取网站：<a href="https://ncov.dxy.cn/ncovh5/view/pneumonia">丁香园</a>
+            <br/>
+            组员：邱雪、贾雯琪、卢京欣
+        </p>
+      </div>
+
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+
+              <li><a href="{{url_for('show_about')}}">关于</a></li>
+
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">国内 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url_for('show_ChinaData')}}">详细数据</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">数据可视化分析</li>
+                  <li><a href="{{url_for('show_map', area='中国疫情现存确诊')}}">现存确诊数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='中国疫情累计确诊')}}">累计确诊数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='中国疫情治愈')}}">治愈数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='中国疫情死亡')}}">死亡数据地图</a></li>
+                  <li><a href="{{url_for('show_pie', area='中国')}}">疫情数据饼图</a></li>
+                </ul>
+              </li>
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">国外 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{url_for('show_worldData')}}">详细数据</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">数据可视化分析</li>
+                  <li><a href="{{url_for('show_map', area='国外疫情现存确诊')}}">现存确诊数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='国外疫情确诊')}}">累计确诊数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='国外疫情治愈')}}">治愈数据地图</a></li>
+                  <li><a href="{{url_for('show_map', area='国外疫情死亡')}}">死亡数据地图</a></li>
+                  <li><a href="{{url_for('show_pie', area='世界')}}">疫情数据饼图</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
